@@ -29,9 +29,23 @@ extension UIViewController {
     }
 
     func register(table: UITableView, seperatorStyle: UITableViewCell.SeparatorStyle = .none) {
-        table.dataSource = self as? UITableViewDataSource
         table.delegate = self as? UITableViewDelegate
         table.separatorStyle = seperatorStyle
         table.tableFooterView = UIView()
+    }
+    
+    func presentActionSheet(completion: @escaping (() -> Void)) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete Form", style: .destructive, handler: { (alert: UIAlertAction!) -> Void in
+            completion()
+        })
+        let image = UIImage(named: "Delete_icon")
+        deleteAction.setValue(image?.withRenderingMode(.alwaysOriginal), forKey: "image")
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

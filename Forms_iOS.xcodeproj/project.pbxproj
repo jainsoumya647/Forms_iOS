@@ -17,6 +17,21 @@
 		9265911D23D5B18E009A8C6F /* FormListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265911C23D5B18E009A8C6F /* FormListViewController.swift */; };
 		9265911F23D5C95A009A8C6F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265911E23D5C95A009A8C6F /* UIViewController+Extension.swift */; };
 		9265912223D5C9AA009A8C6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265912123D5C9AA009A8C6F /* Constants.swift */; };
+		EF28C1DF23D610B20097D275 /* FormListRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1DE23D610B20097D275 /* FormListRender.swift */; };
+		EF28C1E223D611040097D275 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1E123D611040097D275 /* FormModel.swift */; };
+		EF28C1E523D613340097D275 /* FormsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1E423D613340097D275 /* FormsListViewModel.swift */; };
+		EF28C1E823D616040097D275 /* FormsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1E623D616040097D275 /* FormsListCell.swift */; };
+		EF28C1E923D616040097D275 /* FormsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF28C1E723D616040097D275 /* FormsListCell.xib */; };
+		EF28C1EC23D618650097D275 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1EB23D618650097D275 /* UIColor+Extension.swift */; };
+		EF28C1EE23D620570097D275 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1ED23D620570097D275 /* UILabel+Extension.swift */; };
+		EF28C1F023D622C50097D275 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1EF23D622C50097D275 /* CGFloat+Extension.swift */; };
+		EF28C1F223D624210097D275 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1F123D624210097D275 /* UIButton+Extension.swift */; };
+		EF28C1F523D627D40097D275 /* ReusableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1F423D627D40097D275 /* ReusableTableViewCell.swift */; };
+		EF28C1FA23D651A10097D275 /* FormDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1F923D651A10097D275 /* FormDetailsViewController.swift */; };
+		EF28C1FE23D6527D0097D275 /* SingleInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1FC23D6527D0097D275 /* SingleInputCell.swift */; };
+		EF28C1FF23D6527D0097D275 /* SingleInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF28C1FD23D6527D0097D275 /* SingleInputCell.xib */; };
+		EF28C20123D652C20097D275 /* FormDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C20023D652C20097D275 /* FormDetailsViewModel.swift */; };
+		EF28C20323D654AF0097D275 /* FormDetailsRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C20223D654AF0097D275 /* FormDetailsRender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +68,21 @@
 		9265911C23D5B18E009A8C6F /* FormListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormListViewController.swift; sourceTree = "<group>"; };
 		9265911E23D5C95A009A8C6F /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		9265912123D5C9AA009A8C6F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EF28C1DE23D610B20097D275 /* FormListRender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormListRender.swift; sourceTree = "<group>"; };
+		EF28C1E123D611040097D275 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
+		EF28C1E423D613340097D275 /* FormsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsListViewModel.swift; sourceTree = "<group>"; };
+		EF28C1E623D616040097D275 /* FormsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormsListCell.swift; path = Forms_iOS/AppGroup/FormListScreen/View/Cell/FormsListCell.swift; sourceTree = SOURCE_ROOT; };
+		EF28C1E723D616040097D275 /* FormsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FormsListCell.xib; path = Forms_iOS/AppGroup/FormListScreen/View/Cell/FormsListCell.xib; sourceTree = SOURCE_ROOT; };
+		EF28C1EB23D618650097D275 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		EF28C1ED23D620570097D275 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		EF28C1EF23D622C50097D275 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
+		EF28C1F123D624210097D275 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		EF28C1F423D627D40097D275 /* ReusableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTableViewCell.swift; sourceTree = "<group>"; };
+		EF28C1F923D651A10097D275 /* FormDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDetailsViewController.swift; sourceTree = "<group>"; };
+		EF28C1FC23D6527D0097D275 /* SingleInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleInputCell.swift; sourceTree = "<group>"; };
+		EF28C1FD23D6527D0097D275 /* SingleInputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleInputCell.xib; sourceTree = "<group>"; };
+		EF28C20023D652C20097D275 /* FormDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDetailsViewModel.swift; sourceTree = "<group>"; };
+		EF28C20223D654AF0097D275 /* FormDetailsRender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDetailsRender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +164,7 @@
 		9265911523D5AFBE009A8C6F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				EF28C1F323D627BF0097D275 /* CommonClasses */,
 				9265912023D5C99A009A8C6F /* Config */,
 				9265911723D5B0AD009A8C6F /* Extensions */,
 				9265911623D5AFCF009A8C6F /* AppDriver */,
@@ -154,6 +185,10 @@
 			isa = PBXGroup;
 			children = (
 				9265911E23D5C95A009A8C6F /* UIViewController+Extension.swift */,
+				EF28C1EB23D618650097D275 /* UIColor+Extension.swift */,
+				EF28C1ED23D620570097D275 /* UILabel+Extension.swift */,
+				EF28C1EF23D622C50097D275 /* CGFloat+Extension.swift */,
+				EF28C1F123D624210097D275 /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -161,6 +196,7 @@
 		9265911823D5B0DA009A8C6F /* AppGroup */ = {
 			isa = PBXGroup;
 			children = (
+				EF28C1F623D651570097D275 /* FormDetailsScreen */,
 				9265911923D5B12D009A8C6F /* FormListScreen */,
 			);
 			path = AppGroup;
@@ -169,6 +205,8 @@
 		9265911923D5B12D009A8C6F /* FormListScreen */ = {
 			isa = PBXGroup;
 			children = (
+				EF28C1E323D612DC0097D275 /* ViewModel */,
+				EF28C1E023D610F50097D275 /* Model */,
 				9265911A23D5B13C009A8C6F /* View */,
 			);
 			path = FormListScreen;
@@ -177,17 +215,11 @@
 		9265911A23D5B13C009A8C6F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9265911B23D5B15E009A8C6F /* Cell */,
+				EF28C1EA23D616260097D275 /* Cell */,
 				9265911C23D5B18E009A8C6F /* FormListViewController.swift */,
+				EF28C1DE23D610B20097D275 /* FormListRender.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		9265911B23D5B15E009A8C6F /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		9265912023D5C99A009A8C6F /* Config */ = {
@@ -196,6 +228,75 @@
 				9265912123D5C9AA009A8C6F /* Constants.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		EF28C1E023D610F50097D275 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF28C1E123D611040097D275 /* FormModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF28C1E323D612DC0097D275 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF28C1E423D613340097D275 /* FormsListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EF28C1EA23D616260097D275 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EF28C1E623D616040097D275 /* FormsListCell.swift */,
+				EF28C1E723D616040097D275 /* FormsListCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EF28C1F323D627BF0097D275 /* CommonClasses */ = {
+			isa = PBXGroup;
+			children = (
+				EF28C1F423D627D40097D275 /* ReusableTableViewCell.swift */,
+			);
+			path = CommonClasses;
+			sourceTree = "<group>";
+		};
+		EF28C1F623D651570097D275 /* FormDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				EF28C1F823D651720097D275 /* ViewModel */,
+				EF28C1F723D6516B0097D275 /* View */,
+			);
+			path = FormDetailsScreen;
+			sourceTree = "<group>";
+		};
+		EF28C1F723D6516B0097D275 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF28C1FB23D652400097D275 /* Cell */,
+				EF28C1F923D651A10097D275 /* FormDetailsViewController.swift */,
+				EF28C20223D654AF0097D275 /* FormDetailsRender.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EF28C1F823D651720097D275 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF28C20023D652C20097D275 /* FormDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EF28C1FB23D652400097D275 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EF28C1FC23D6527D0097D275 /* SingleInputCell.swift */,
+				EF28C1FD23D6527D0097D275 /* SingleInputCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +404,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				926590F223D5AF9F009A8C6F /* LaunchScreen.storyboard in Resources */,
+				EF28C1FF23D6527D0097D275 /* SingleInputCell.xib in Resources */,
+				EF28C1E923D616040097D275 /* FormsListCell.xib in Resources */,
 				926590EF23D5AF9F009A8C6F /* Assets.xcassets in Resources */,
 				926590ED23D5AF9E009A8C6F /* Main.storyboard in Resources */,
 			);
@@ -329,11 +432,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF28C20123D652C20097D275 /* FormDetailsViewModel.swift in Sources */,
+				EF28C1EE23D620570097D275 /* UILabel+Extension.swift in Sources */,
+				EF28C1E223D611040097D275 /* FormModel.swift in Sources */,
+				EF28C1FE23D6527D0097D275 /* SingleInputCell.swift in Sources */,
+				EF28C1F223D624210097D275 /* UIButton+Extension.swift in Sources */,
+				EF28C1F023D622C50097D275 /* CGFloat+Extension.swift in Sources */,
 				9265912223D5C9AA009A8C6F /* Constants.swift in Sources */,
+				EF28C1FA23D651A10097D275 /* FormDetailsViewController.swift in Sources */,
+				EF28C1E523D613340097D275 /* FormsListViewModel.swift in Sources */,
 				9265911F23D5C95A009A8C6F /* UIViewController+Extension.swift in Sources */,
 				926590E623D5AF9E009A8C6F /* AppDelegate.swift in Sources */,
+				EF28C1E823D616040097D275 /* FormsListCell.swift in Sources */,
 				9265911D23D5B18E009A8C6F /* FormListViewController.swift in Sources */,
 				926590E823D5AF9E009A8C6F /* SceneDelegate.swift in Sources */,
+				EF28C20323D654AF0097D275 /* FormDetailsRender.swift in Sources */,
+				EF28C1DF23D610B20097D275 /* FormListRender.swift in Sources */,
+				EF28C1F523D627D40097D275 /* ReusableTableViewCell.swift in Sources */,
+				EF28C1EC23D618650097D275 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

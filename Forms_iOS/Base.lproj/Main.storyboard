@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="So4-Rp-VkL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="So4-Rp-VkL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +30,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Form Listing" id="vTC-KU-jAD">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ncq-6n-0Zs"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ncq-6n-0Zs">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addFormAction:" destination="BYZ-38-t0r" id="cWY-E1-1Et"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="formsListTable" destination="it5-Z0-OZN" id="8fA-8N-9RB"/>
@@ -40,16 +45,31 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Form Details View Controller-->
         <scene sceneID="C8i-eC-BAN">
             <objects>
-                <viewController id="6Wt-bk-beg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FormDetailsViewController" id="6Wt-bk-beg" customClass="FormDetailsViewController" customModule="Forms_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U8P-W8-SA4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cGy-nM-ojp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7F7-CM-TdO" firstAttribute="bottom" secondItem="cGy-nM-ojp" secondAttribute="bottom" id="1GF-gy-Pfy"/>
+                            <constraint firstItem="7F7-CM-TdO" firstAttribute="trailing" secondItem="cGy-nM-ojp" secondAttribute="trailing" id="UnG-u1-Dia"/>
+                            <constraint firstItem="cGy-nM-ojp" firstAttribute="top" secondItem="7F7-CM-TdO" secondAttribute="top" id="ZdZ-yn-CxH"/>
+                            <constraint firstItem="cGy-nM-ojp" firstAttribute="leading" secondItem="7F7-CM-TdO" secondAttribute="leading" id="xzp-kb-Wys"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7F7-CM-TdO"/>
                     </view>
+                    <connections>
+                        <outlet property="formDetailsTable" destination="cGy-nM-ojp" id="3yP-TP-84z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rox-gu-ELh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

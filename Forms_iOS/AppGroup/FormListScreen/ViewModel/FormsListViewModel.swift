@@ -19,4 +19,9 @@ class FormsListViewModel {
         self.forms.remove(at: index)
         self.reloadTable?(self.forms)
     }
+    
+    func appendForms(_ form: FormModel) {
+        self.forms.append(form)
+        self.reloadTable?(self.forms)
+    }
 }

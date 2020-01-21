@@ -36,6 +36,7 @@ struct Text {
     static let recurringJob = "Recurring Job"
     static let sameDayJob = "Same Day Job"
     static let multiDaysJob = "Multi Days Job"
+    static let views = "views"
 }
 
 struct FontSize {

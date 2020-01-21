@@ -11,11 +11,6 @@ import SkyFloatingLabelTextField
 
 class TextInputCell: ReusableTableViewCell {
 
-    enum FieldType: Int {
-        case primary
-        case secondary
-    }
-
     @IBOutlet weak var inputTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var secondaryInputTextField: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet weak var requiredLabel: UILabel!
@@ -23,9 +18,9 @@ class TextInputCell: ReusableTableViewCell {
 
     var type: FormDetailsTypes!
     var viewModel: FormDetailsViewModel!
-    var primaryList = [String]()
-    var secondaryList = [String]()
-
+    var pickerViewRender: PickerViewRender?
+    var pickerViewSecondaryRender: PickerViewRender?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setuCell()
@@ -71,70 +66,64 @@ class TextInputCell: ReusableTableViewCell {
         case .formTitle, .formDescription:
             self.inputTextField.keyboardType = .default
             self.showSecondaryStack(false)
-        case .currency:
+        case .budget, .currency:
             self.inputTextField.keyboardType = .numberPad
             self.showSecondaryStack(true)
-            self.secondaryInputTextField.iconWidth = 30
-            self.secondaryInputTextField.iconType = .image
-            self.secondaryInputTextField.iconImage = UIImage(named: "flag")
-            self.secondaryInputTextField.isEnabled = false
-            self.secondaryInputTextField.disabledColor = .themeBlueColor
+            self.setSecondaryFlag(true)
         case .rate:
             self.showSecondaryStack(true)
-            self.secondaryInputTextField.iconWidth = 0
-            self.secondaryInputTextField.iconImage = nil
-            self.secondaryInputTextField.isEnabled = true
-            self.primaryList = self.viewModel.getPickerArray(for: type)
-            let picker = UIPickerView()
-            picker.tag = FieldType.primary.rawValue
-            picker.dataSource = self
-            picker.delegate = self
-            self.inputTextField.inputView = picker
-        case .paymentMethod:
+            self.setSecondaryFlag(false)
+            self.setupPickerView(type: type, isPrimary: true)
+        case .paymentMethod, .jobTerm:
             self.showSecondaryStack(true)
-            self.secondaryInputTextField.iconWidth = 0
-            self.secondaryInputTextField.iconImage = nil
-            self.secondaryInputTextField.isEnabled = true
-            self.secondaryList = self.viewModel.getPickerArray(for: type)
-            let picker = UIPickerView()
-            picker.tag = FieldType.secondary.rawValue
-            picker.dataSource = self
-            picker.delegate = self
-            self.secondaryInputTextField.inputView = picker
-        case .jobTerm:
-            self.showSecondaryStack(true)
-            self.secondaryInputTextField.iconWidth = 0
-            self.secondaryInputTextField.iconImage = nil
-            self.secondaryInputTextField.isEnabled = true
-            self.secondaryList = self.viewModel.getPickerArray(for: type)
-            let picker = UIPickerView()
-            picker.tag = FieldType.secondary.rawValue
-            picker.dataSource = self
-            picker.delegate = self
-            self.secondaryInputTextField.inputView = picker
+            self.setSecondaryFlag(false)
+            self.setupPickerView(type: type, isPrimary: false)
         case .startDate:
             self.showSecondaryStack(true)
-            self.secondaryInputTextField.iconWidth = 0
-            self.secondaryInputTextField.iconImage = nil
-            self.secondaryInputTextField.isEnabled = true
+            self.setSecondaryFlag(false)
             let picker = UIDatePicker()
-            picker.tag = FieldType.primary.rawValue
             picker.datePickerMode = .date
             picker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
             self.inputTextField.inputView = picker
-        default:
-            self.showSecondaryStack(true)
-            self.secondaryInputTextField.iconWidth = 0
-            self.secondaryInputTextField.iconImage = nil
-            self.secondaryInputTextField.isEnabled = true
         }
     }
 
+    private func setupPickerView(type: FormDetailsTypes, isPrimary: Bool) {
+        if isPrimary {
+            let picker = UIPickerView()
+            self.pickerViewRender = PickerViewRender(array: self.viewModel.getPickerArray(for: type), type: type)
+            self.pickerViewRender?.selectedValue = { (selectedValue, type) in
+                self.inputTextField.text = selectedValue
+                self.viewModel.updateText(for: type, updatedText: selectedValue)
+            }
+            picker.dataSource = self.pickerViewRender
+            picker.delegate = self.pickerViewRender
+            self.inputTextField.inputView = picker
+        } else {
+            let picker = UIPickerView()
+            self.pickerViewSecondaryRender = PickerViewRender(array: self.viewModel.getPickerArray(for: type), type: type)
+            self.pickerViewSecondaryRender?.selectedValue = { (selectedValue, type) in
+                self.secondaryInputTextField.text = selectedValue
+                self.viewModel.updateText(for: type, updatedText: selectedValue)
+            }
+            picker.dataSource = self.pickerViewSecondaryRender
+            picker.delegate = self.pickerViewSecondaryRender
+            self.secondaryInputTextField.inputView = picker
+        }
+    }
+    
+    private func setSecondaryFlag(_ setFlag: Bool) {
+        self.secondaryInputTextField.iconWidth = setFlag ? 30 : 0
+        self.secondaryInputTextField.iconImage = setFlag ? UIImage(named: "flag") : nil
+        self.secondaryInputTextField.isEnabled = !setFlag
+        self.secondaryInputTextField.disabledColor = .themeBlueColor
+    }
+    
     @objc private func dateChanged(_ sender: UIDatePicker) {
         print(sender.date)
-        let dateInStringFormat = sender.date.convertUTCToLocalInString()
-        self.inputTextField.text = dateInStringFormat
-        self.viewModel.updateText(for: self.type, updatedText: dateInStringFormat)
+        self.requiredLabel.textColor = .lightGray
+        self.inputTextField.text = sender.date.convertUTCToLocalInString()
+        self.viewModel.updateStartDate(date: sender.date)
     }
 
     private func showSecondaryStack(_ isVisible: Bool) {
@@ -167,54 +156,5 @@ extension TextInputCell: UITextFieldDelegate {
             }
         }
         return true
-    }
-}
-
-extension TextInputCell: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch pickerView.tag {
-        case FieldType.primary.rawValue:
-            return self.primaryList.count
-        case FieldType.secondary.rawValue:
-            return self.secondaryList.count
-        default:
-            return 0
-        }
-    }
-}
-
-extension TextInputCell: UIPickerViewDelegate {
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch pickerView.tag {
-        case FieldType.primary.rawValue:
-            return self.primaryList[row]
-        case FieldType.secondary.rawValue:
-            return self.secondaryList[row]
-        default:
-            return ""
-        }
-    }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        var selectedValue = ""
-        var selectedType = self.type
-        switch pickerView.tag {
-        case FieldType.primary.rawValue:
-            selectedValue = self.primaryList[row]
-        case FieldType.secondary.rawValue:
-            selectedValue = self.secondaryList[row]
-            guard let relatedType = self.viewModel.getRelatedSecondaryType(for: type) else { break }
-            selectedType = relatedType
-
-        default:
-            break
-        }
-        self.secondaryInputTextField.text = selectedValue
-        self.viewModel.updateText(for: selectedType!, updatedText: selectedValue)
     }
 }

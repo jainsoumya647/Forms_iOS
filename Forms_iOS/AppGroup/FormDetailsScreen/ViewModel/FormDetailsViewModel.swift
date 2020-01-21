@@ -23,14 +23,27 @@ class FormDetailsViewModel {
     
     private var types: [FormDetailsTypes]
     private var formModel = FormModel()
+    private var imagesArray: [UIImage]
+    var reloadCollection: (() -> Void)?
+    
     init() {
         self.types = [.formTitle, .formDescription, .budget, .rate, .startDate]
+        self.imagesArray = [UIImage(named: "Attachment")!]
     }
     
     func getTypes() -> [FormDetailsTypes] {
         return self.types
     }
 
+    func getImages() -> [UIImage] {
+        return self.imagesArray
+    }
+    
+    func appendImage(image: UIImage) {
+        self.imagesArray.append(image)
+        self.reloadCollection?()
+    }
+    
     func getPlaceholderText(for type: FormDetailsTypes) -> String {
         switch type {
         case .formTitle:
@@ -52,6 +65,21 @@ class FormDetailsViewModel {
         }
     }
 
+    func validateDataAndGetForms() -> FormModel? {
+        guard !self.formModel.getTitle().isEmpty else {
+            return nil
+        }
+        
+        guard !self.formModel.getBudget().isEmpty else {
+            return nil
+        }
+        
+        guard !self.formModel.getStartDate().isEmpty else {
+            return nil
+        }
+        return self.formModel
+    }
+    
     func getRequiredLabelTextAndColor(for type: FormDetailsTypes, showError: Bool) -> (String, UIColor) {
         let text = self.getText(for: type)
         let errorColor: UIColor = showError ? .red : .lightGray
@@ -121,13 +149,15 @@ class FormDetailsViewModel {
             self.formModel.rate = updatedText
         case .paymentMethod:
             self.formModel.paymentMethod = updatedText
-        case .startDate:
-            self.formModel.startDate = updatedText
         case .jobTerm:
             self.formModel.jobTerm = updatedText
         default:
             break
         }
+    }
+    
+    func updateStartDate(date: Date) {
+        self.formModel.startDate = date
     }
 
     func getCharacterCount(for type: FormDetailsTypes) -> Int {

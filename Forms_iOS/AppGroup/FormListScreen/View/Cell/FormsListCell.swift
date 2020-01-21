@@ -46,6 +46,14 @@ class FormsListCell: ReusableTableViewCell {
         self.inboxButton.configureBorderColor()
     }
     
+    func configureCell(formModel: FormModel) {
+        self.titleLabel.text = formModel.getTitle()
+        self.startDateLabel.text = formModel.getStartDate(format: "MMM dd, yyyy")
+        self.numberOfViewsLabel.text = formModel.getNumberOfViews()
+        self.rateLabel.text = formModel.getRate()
+        self.jobTermLabel.text = formModel.getJobTerm()
+    }
+    
     @IBAction func moreAction(_ sender: Any) {
         self.moreOptionAction?()
     }

@@ -48,6 +48,7 @@ class FormListViewController: UIViewController {
     
     @IBAction func addFormAction(_ sender: Any) {
         if let vc = FormDetailsViewController.getController() {
+            vc.delegate = self
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -55,11 +56,16 @@ class FormListViewController: UIViewController {
 }
 
 extension FormListViewController: FormListRenderDelegate {
-    
     func moreOptionsClicked(index: Int) {
         self.presentActionSheet { [weak self] in
             self?.viewModel.removeModel(on: index)
         }
     }
-    
+}
+
+extension FormListViewController: FormDetailsDelegate {
+    func formSaved(form: FormModel) {
+        print(form)
+        self.viewModel.appendForms(form)
+    }
 }

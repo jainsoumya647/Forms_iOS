@@ -16,9 +16,14 @@ struct FormModel {
     let currency = "US"
     var rate: String?
     var paymentMethod: String?
-    var startDate: String?
+    var startDate: Date?
     var jobTerm: String?
-
+    var numberOfViews:Int
+    
+    init() {
+        self.numberOfViews = Int.random(in: 0...999)
+    }
+    
     func getTitle() -> String {
         return self.formTitle ?? ""
     }
@@ -32,7 +37,7 @@ struct FormModel {
     }
 
     func getCurrency() -> String {
-        return self.currency ?? ""
+        return self.currency 
     }
 
     func getRate() -> String {
@@ -43,11 +48,15 @@ struct FormModel {
         return self.paymentMethod ?? ""
     }
 
-    func getStartDate() -> String {
-        return self.startDate ?? ""
+    func getStartDate(format: String = "EEEE dd MMM") -> String {
+        return self.startDate?.convertUTCToLocalInString(with: format) ?? ""
     }
 
     func getJobTerm() -> String {
         return self.jobTerm ?? ""
+    }
+    
+    func getNumberOfViews() -> String {
+        return "\(numberOfViews) \(Text.views)"
     }
 }

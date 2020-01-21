@@ -35,7 +35,7 @@ extension FormListRender: UITableViewDataSource {
         guard let cell = FormsListCell.getDequeuedCell(for: tableView, indexPath: indexPath) as? FormsListCell else {
             return UITableViewCell()
         }
-        
+        cell.configureCell(formModel: self.forms[indexPath.row])
         cell.moreOptionAction = { [weak self] in
             self?.delegate?.moreOptionsClicked(index: indexPath.row)
         }

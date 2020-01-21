@@ -37,6 +37,11 @@
 		EF28C1FF23D6527D0097D275 /* TextInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF28C1FD23D6527D0097D275 /* TextInputCell.xib */; };
 		EF28C20123D652C20097D275 /* FormDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C20023D652C20097D275 /* FormDetailsViewModel.swift */; };
 		EF28C20323D654AF0097D275 /* FormDetailsRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C20223D654AF0097D275 /* FormDetailsRender.swift */; };
+		EF28C20523D769650097D275 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C20423D769650097D275 /* PickerView.swift */; };
+		EF9203E823D79B70008C8FA8 /* ImageCollectionViewRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9203E723D79B70008C8FA8 /* ImageCollectionViewRender.swift */; };
+		EF9203EB23D79BB8008C8FA8 /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9203E923D79BB8008C8FA8 /* ImageCollectionCell.swift */; };
+		EF9203EC23D79BB8008C8FA8 /* ImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF9203EA23D79BB8008C8FA8 /* ImageCollectionCell.xib */; };
+		EF9203EE23D79BE7008C8FA8 /* ReusableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9203ED23D79BE7008C8FA8 /* ReusableCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +104,11 @@
 		EF28C1FD23D6527D0097D275 /* TextInputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputCell.xib; sourceTree = "<group>"; };
 		EF28C20023D652C20097D275 /* FormDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDetailsViewModel.swift; sourceTree = "<group>"; };
 		EF28C20223D654AF0097D275 /* FormDetailsRender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDetailsRender.swift; sourceTree = "<group>"; };
+		EF28C20423D769650097D275 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		EF9203E723D79B70008C8FA8 /* ImageCollectionViewRender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewRender.swift; sourceTree = "<group>"; };
+		EF9203E923D79BB8008C8FA8 /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
+		EF9203EA23D79BB8008C8FA8 /* ImageCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionCell.xib; sourceTree = "<group>"; };
+		EF9203ED23D79BE7008C8FA8 /* ReusableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				EF28C1F423D627D40097D275 /* ReusableTableViewCell.swift */,
+				EF28C20423D769650097D275 /* PickerView.swift */,
+				EF9203ED23D79BE7008C8FA8 /* ReusableCollectionViewCell.swift */,
 			);
 			path = CommonClasses;
 			sourceTree = "<group>";
@@ -324,6 +336,7 @@
 				EF28C1FB23D652400097D275 /* Cell */,
 				EF28C1F923D651A10097D275 /* FormDetailsViewController.swift */,
 				EF28C20223D654AF0097D275 /* FormDetailsRender.swift */,
+				EF9203E723D79B70008C8FA8 /* ImageCollectionViewRender.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,6 +354,8 @@
 			children = (
 				EF28C1FC23D6527D0097D275 /* TextInputCell.swift */,
 				EF28C1FD23D6527D0097D275 /* TextInputCell.xib */,
+				EF9203E923D79BB8008C8FA8 /* ImageCollectionCell.swift */,
+				EF9203EA23D79BB8008C8FA8 /* ImageCollectionCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -457,6 +472,7 @@
 				926590F223D5AF9F009A8C6F /* LaunchScreen.storyboard in Resources */,
 				EF28C1FF23D6527D0097D275 /* TextInputCell.xib in Resources */,
 				EF28C1E923D616040097D275 /* FormsListCell.xib in Resources */,
+				EF9203EC23D79BB8008C8FA8 /* ImageCollectionCell.xib in Resources */,
 				926590EF23D5AF9F009A8C6F /* Assets.xcassets in Resources */,
 				926590ED23D5AF9E009A8C6F /* Main.storyboard in Resources */,
 			);
@@ -589,18 +605,22 @@
 				9265912423D6D55F009A8C6F /* UITextField+Extension.swift in Sources */,
 				EF28C20123D652C20097D275 /* FormDetailsViewModel.swift in Sources */,
 				EF28C1EE23D620570097D275 /* UILabel+Extension.swift in Sources */,
+				EF9203EB23D79BB8008C8FA8 /* ImageCollectionCell.swift in Sources */,
 				EF28C1E223D611040097D275 /* FormModel.swift in Sources */,
 				EF28C1FE23D6527D0097D275 /* TextInputCell.swift in Sources */,
+				EF28C20523D769650097D275 /* PickerView.swift in Sources */,
 				9298030B23D7368300417ADD /* Date+Extension.swift in Sources */,
 				EF28C1F223D624210097D275 /* UIButton+Extension.swift in Sources */,
 				EF28C1F023D622C50097D275 /* CGFloat+Extension.swift in Sources */,
 				9265912223D5C9AA009A8C6F /* Constants.swift in Sources */,
 				EF28C1FA23D651A10097D275 /* FormDetailsViewController.swift in Sources */,
 				EF28C1E523D613340097D275 /* FormsListViewModel.swift in Sources */,
+				EF9203E823D79B70008C8FA8 /* ImageCollectionViewRender.swift in Sources */,
 				9265911F23D5C95A009A8C6F /* UIViewController+Extension.swift in Sources */,
 				926590E623D5AF9E009A8C6F /* AppDelegate.swift in Sources */,
 				EF28C1E823D616040097D275 /* FormsListCell.swift in Sources */,
 				9265911D23D5B18E009A8C6F /* FormListViewController.swift in Sources */,
+				EF9203EE23D79BE7008C8FA8 /* ReusableCollectionViewCell.swift in Sources */,
 				926590E823D5AF9E009A8C6F /* SceneDelegate.swift in Sources */,
 				EF28C20323D654AF0097D275 /* FormDetailsRender.swift in Sources */,
 				EF28C1DF23D610B20097D275 /* FormListRender.swift in Sources */,

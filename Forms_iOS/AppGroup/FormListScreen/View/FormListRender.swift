@@ -27,7 +27,7 @@ class FormListRender: NSObject {
 
 extension FormListRender: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3 //self.forms.count
+        return self.forms.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

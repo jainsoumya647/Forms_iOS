@@ -18,6 +18,24 @@ enum Controller: String {
 
 struct Text {
     static let ok = "Ok"
+    static let formTitle = "Form Title"
+    static let formDescription = "Form Description"
+    static let budget = "Budget"
+    static let rate = "Rate"
+    static let paymentMethod = "Payment Method"
+    static let startDate = "Start Date"
+    static let jobTerm = "Job Term"
+    static let attachments = "Attachments"
+    static let required = "Required"
+    static let charactersLeft = "characters left"
+    static let noPreference = "No Preference"
+    static let fixedBudget = "Fixed Budget"
+    static let hourlyRate = "Hourly Rate"
+    static let ePayment = "E-Payment"
+    static let cash = "Cash"
+    static let recurringJob = "Recurring Job"
+    static let sameDayJob = "Same Day Job"
+    static let multiDaysJob = "Multi Days Job"
 }
 
 struct FontSize {

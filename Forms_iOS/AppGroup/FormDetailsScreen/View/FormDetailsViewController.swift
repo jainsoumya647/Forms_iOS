@@ -25,13 +25,13 @@ class FormDetailsViewController: UIViewController {
     
     private func initalizeData() {
         self.viewModel = FormDetailsViewModel()
-        self.render = FormDetailsRender(rows: self.viewModel.getTypes())
+        self.render = FormDetailsRender(viewModel: self.viewModel)
     }
     
     private func setupTableView() {
         self.register(table: self.formDetailsTable)
         self.formDetailsTable.dataSource = self.render
-        SingleInputCell.registerWithTable(self.formDetailsTable)
+        TextInputCell.registerWithTable(self.formDetailsTable)
     }
 
     class func getController() -> FormDetailsViewController? {

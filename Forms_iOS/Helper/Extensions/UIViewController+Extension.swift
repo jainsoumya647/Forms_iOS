@@ -31,6 +31,7 @@ extension UIViewController {
     func register(table: UITableView, seperatorStyle: UITableViewCell.SeparatorStyle = .none) {
         table.delegate = self as? UITableViewDelegate
         table.separatorStyle = seperatorStyle
+        table.alwaysBounceVertical = false
         table.tableFooterView = UIView()
     }
     

@@ -10,9 +10,10 @@ import UIKit
 
 class FormDetailsRender: NSObject {
     var rows: [FormDetailsTypes]
-    
-    init(rows: [FormDetailsTypes]) {
-        self.rows = rows
+    var viewModel: FormDetailsViewModel
+    init(viewModel: FormDetailsViewModel) {
+        self.rows = viewModel.getTypes()
+        self.viewModel = viewModel
     }
     
 }
@@ -23,9 +24,8 @@ extension FormDetailsRender: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard  let cell = SingleInputCell.getDequeuedCell(for: tableView, indexPath: indexPath) as? SingleInputCell else { return UITableViewCell() }
-        
+        guard  let cell = TextInputCell.getDequeuedCell(for: tableView, indexPath: indexPath) as? TextInputCell else { return UITableViewCell() }
+        cell.configureCell(type: self.rows[indexPath.row], viewModel: self.viewModel, showError: false)
         return cell
     }
     

@@ -11,18 +11,16 @@ import UIKit
 class ImageCollectionCell: ReusableCollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
-//    @IBOutlet weak var widthOfImageView: NSLayoutConstraint!
-//    @IBOutlet weak var heightOfImageView: NSLayoutConstraint!
-    
+    @IBOutlet weak var widthOfImageView: NSLayoutConstraint!    
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.backgroundColor = .clear
+        self.imageView.setCornerRadius()
     }
 
     func configureCell(image: UIImage, size: CGSize)  {
         self.imageView.image = image //kf.setImage(with: URL(string: imageURL), placeholder: Image.placeholder)
 //        self.widthOfImageView.constant = size.width
-//        self.heightOfImageView.constant = size.height
     }
 }

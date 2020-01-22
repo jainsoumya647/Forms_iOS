@@ -14,13 +14,15 @@
 		926590ED23D5AF9E009A8C6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926590EB23D5AF9E009A8C6F /* Main.storyboard */; };
 		926590EF23D5AF9F009A8C6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 926590EE23D5AF9F009A8C6F /* Assets.xcassets */; };
 		926590F223D5AF9F009A8C6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926590F023D5AF9F009A8C6F /* LaunchScreen.storyboard */; };
-		926590FD23D5AFA0009A8C6F /* Forms_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926590FC23D5AFA0009A8C6F /* Forms_iOSTests.swift */; };
 		9265910823D5AFA0009A8C6F /* Forms_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265910723D5AFA0009A8C6F /* Forms_iOSUITests.swift */; };
 		9265911D23D5B18E009A8C6F /* FormListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265911C23D5B18E009A8C6F /* FormListViewController.swift */; };
 		9265911F23D5C95A009A8C6F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265911E23D5C95A009A8C6F /* UIViewController+Extension.swift */; };
 		9265912223D5C9AA009A8C6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265912123D5C9AA009A8C6F /* Constants.swift */; };
 		9265912423D6D55F009A8C6F /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265912323D6D55F009A8C6F /* UITextField+Extension.swift */; };
 		9298030B23D7368300417ADD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298030A23D7368300417ADD /* Date+Extension.swift */; };
+		9298030D23D8354100417ADD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298030C23D8354100417ADD /* UIView+Extension.swift */; };
+		9298031023D836F500417ADD /* FormListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298030F23D836F500417ADD /* FormListTest.swift */; };
+		9298031323D8425300417ADD /* FormDetailsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298031223D8425300417ADD /* FormDetailsTest.swift */; };
 		96F4224DC3AE063D94CF8266 /* Pods_Forms_iOS_Forms_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393EFF26FD3095557A699FDB /* Pods_Forms_iOS_Forms_iOSUITests.framework */; };
 		EF28C1DF23D610B20097D275 /* FormListRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1DE23D610B20097D275 /* FormListRender.swift */; };
 		EF28C1E223D611040097D275 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1E123D611040097D275 /* FormModel.swift */; };
@@ -75,7 +77,6 @@
 		926590F123D5AF9F009A8C6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		926590F323D5AF9F009A8C6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		926590F823D5AFA0009A8C6F /* Forms_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Forms_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		926590FC23D5AFA0009A8C6F /* Forms_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forms_iOSTests.swift; sourceTree = "<group>"; };
 		926590FE23D5AFA0009A8C6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9265910323D5AFA0009A8C6F /* Forms_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Forms_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9265910723D5AFA0009A8C6F /* Forms_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forms_iOSUITests.swift; sourceTree = "<group>"; };
@@ -85,6 +86,9 @@
 		9265912123D5C9AA009A8C6F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9265912323D6D55F009A8C6F /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		9298030A23D7368300417ADD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		9298030C23D8354100417ADD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9298030F23D836F500417ADD /* FormListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormListTest.swift; sourceTree = "<group>"; };
+		9298031223D8425300417ADD /* FormDetailsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDetailsTest.swift; sourceTree = "<group>"; };
 		B0D1A56475FDD90EA703B7D6 /* Pods-Forms_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forms_iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Forms_iOSTests/Pods-Forms_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B776FD4846FD6EEA0E1131D1 /* Pods_Forms_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forms_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76A8B20451E55EFE95E2A55 /* Pods-Forms_iOS-Forms_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forms_iOS-Forms_iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Forms_iOS-Forms_iOSUITests/Pods-Forms_iOS-Forms_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,7 +204,8 @@
 		926590FB23D5AFA0009A8C6F /* Forms_iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				926590FC23D5AFA0009A8C6F /* Forms_iOSTests.swift */,
+				9298031123D8422D00417ADD /* FormDetailsTest */,
+				9298030E23D836C100417ADD /* FormListScreenTest */,
 				926590FE23D5AFA0009A8C6F /* Info.plist */,
 			);
 			path = Forms_iOSTests;
@@ -245,6 +250,7 @@
 				EF28C1F123D624210097D275 /* UIButton+Extension.swift */,
 				9265912323D6D55F009A8C6F /* UITextField+Extension.swift */,
 				9298030A23D7368300417ADD /* Date+Extension.swift */,
+				9298030C23D8354100417ADD /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,6 +290,22 @@
 				9265912123D5C9AA009A8C6F /* Constants.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		9298030E23D836C100417ADD /* FormListScreenTest */ = {
+			isa = PBXGroup;
+			children = (
+				9298030F23D836F500417ADD /* FormListTest.swift */,
+			);
+			path = FormListScreenTest;
+			sourceTree = "<group>";
+		};
+		9298031123D8422D00417ADD /* FormDetailsTest */ = {
+			isa = PBXGroup;
+			children = (
+				9298031223D8425300417ADD /* FormDetailsTest.swift */,
+			);
+			path = FormDetailsTest;
 			sourceTree = "<group>";
 		};
 		EF28C1E023D610F50097D275 /* Model */ = {
@@ -625,6 +647,7 @@
 				EF28C20323D654AF0097D275 /* FormDetailsRender.swift in Sources */,
 				EF28C1DF23D610B20097D275 /* FormListRender.swift in Sources */,
 				EF28C1F523D627D40097D275 /* ReusableTableViewCell.swift in Sources */,
+				9298030D23D8354100417ADD /* UIView+Extension.swift in Sources */,
 				EF28C1EC23D618650097D275 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,7 +656,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				926590FD23D5AFA0009A8C6F /* Forms_iOSTests.swift in Sources */,
+				9298031323D8425300417ADD /* FormDetailsTest.swift in Sources */,
+				9298031023D836F500417ADD /* FormListTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

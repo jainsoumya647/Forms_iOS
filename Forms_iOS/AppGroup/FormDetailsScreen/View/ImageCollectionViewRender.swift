@@ -12,10 +12,15 @@ class ImageCollectionViewRender: NSObject {
 
     var imagesArray: [UIImage]
     var size: CGSize
-    
+    var openImagePicker: (() -> Void)?
+
     init(imagesArray: [UIImage], size: CGSize = .zero) {
         self.imagesArray = imagesArray
         self.size = size
+    }
+
+    func updateImagesArray(imagesArray: [UIImage]) {
+        self.imagesArray = imagesArray
     }
 }
 
@@ -36,5 +41,11 @@ extension ImageCollectionViewRender: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return size
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            self.openImagePicker?()
+        }
     }
 }

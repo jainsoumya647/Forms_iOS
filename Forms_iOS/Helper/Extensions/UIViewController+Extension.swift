@@ -49,4 +49,12 @@ extension UIViewController {
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
+
+    func openGallery() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        self.present(imagePicker, animated: true, completion: nil)
+    }
 }

@@ -52,12 +52,22 @@ class FormDetailsViewController: UIViewController {
     
     private func initalizeData() {
         self.viewModel = FormDetailsViewModel()
+        self.observeEvents()
         self.render = FormDetailsRender(viewModel: self.viewModel)
-        self.collectionRender = ImageCollectionViewRender(imagesArray: self.viewModel.getImages())
+        self.collectionRender = ImageCollectionViewRender(imagesArray: self.viewModel.getImages(), size: CGSize(width: 90, height: 90))
+        self.collectionRender?.openImagePicker = { [weak self] in
+            print("opening image picker...")
+            guard let current = self else {
+                return
+            }
+            current.collectionRender?.updateImagesArray(imagesArray: current.viewModel.getImages())
+            current.openGallery()
+        }
     }
     
     private func observeEvents() {
-        self.viewModel.reloadCollection = { [weak self] in
+        self.viewModel.updateAndReloadCollection = { [weak self] (imagesArray) in
+            self?.collectionRender?.updateImagesArray(imagesArray: imagesArray)
             self?.imagesCollectionView.reloadData()
         }
     }
@@ -72,10 +82,23 @@ class FormDetailsViewController: UIViewController {
         ImageCollectionCell.registerWithCollection(self.imagesCollectionView)
         self.imagesCollectionView.delegate = self.collectionRender
         self.imagesCollectionView.dataSource = self.collectionRender
+        self.imagesCollectionView.backgroundColor = .tableBackgroundColor
     }
 
     class func getController() -> FormDetailsViewController? {
         return self.initalizeMyViewController(identifier: .formDetails, storyboard: .main) as? FormDetailsViewController
     }
     
+}
+
+extension FormDetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.viewModel.appendImage(image: image)
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+
 }

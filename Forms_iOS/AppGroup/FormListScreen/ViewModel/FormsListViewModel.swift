@@ -24,4 +24,8 @@ class FormsListViewModel {
         self.forms.append(form)
         self.reloadTable?(self.forms)
     }
+
+    func formsCountEqualsTo(_ count: Int) -> Bool {
+        return self.forms.count == count
+    }
 }

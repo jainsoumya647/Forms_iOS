@@ -24,7 +24,7 @@ class FormDetailsViewModel {
     private var types: [FormDetailsTypes]
     private var formModel = FormModel()
     private var imagesArray: [UIImage]
-    var reloadCollection: (() -> Void)?
+    var updateAndReloadCollection: ((_ imagesArray: [UIImage]) -> Void)?
     
     init() {
         self.types = [.formTitle, .formDescription, .budget, .rate, .startDate]
@@ -41,7 +41,7 @@ class FormDetailsViewModel {
     
     func appendImage(image: UIImage) {
         self.imagesArray.append(image)
-        self.reloadCollection?()
+        self.updateAndReloadCollection?(self.imagesArray)
     }
     
     func getPlaceholderText(for type: FormDetailsTypes) -> String {
@@ -182,6 +182,5 @@ class FormDetailsViewModel {
         default:
             return [String]()
         }
-
     }
 }

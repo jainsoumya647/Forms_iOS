@@ -25,6 +25,7 @@ class FormsListViewModel {
         self.reloadTable?(self.forms)
     }
 
+    ///Only for unit tests
     func formsCountEqualsTo(_ count: Int) -> Bool {
         return self.forms.count == count
     }

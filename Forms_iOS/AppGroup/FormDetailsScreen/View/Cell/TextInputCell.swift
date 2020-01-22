@@ -36,7 +36,9 @@ class TextInputCell: ReusableTableViewCell {
     func configureCell(type: FormDetailsTypes, viewModel: FormDetailsViewModel, showError: Bool) {
         self.type = type
         self.viewModel = viewModel
-        self.inputTextField.placeholder = self.viewModel.getPlaceholderText(for: type)
+        let placeholder = self.viewModel.getPlaceholderText(for: type)
+        self.inputTextField.placeholder = placeholder
+        self.inputTextField.accessibilityIdentifier = placeholder
         self.setupTextFieldsAccording(to: type)
         self.updateRequiredLabel(for: type, showError: showError)
         self.inputTextField.text = viewModel.getText(for: type)
@@ -57,7 +59,9 @@ class TextInputCell: ReusableTableViewCell {
     private func fillupSecondoryField(type: FormDetailsTypes) {
         guard let relatedType = self.viewModel.getRelatedSecondaryType(for: type) else { return }
         self.secondaryInputTextField.text = self.viewModel.getText(for: relatedType)
-        self.secondaryInputTextField.placeholder = self.viewModel.getPlaceholderText(for: relatedType)
+        let placeholder = self.viewModel.getPlaceholderText(for: relatedType)
+        self.secondaryInputTextField.placeholder = placeholder
+        self.secondaryInputTextField.accessibilityIdentifier = placeholder
         self.setupTextFieldsAccording(to: relatedType)
     }
 

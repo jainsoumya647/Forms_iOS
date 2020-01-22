@@ -33,7 +33,9 @@ class FormDetailsViewController: UIViewController {
     
     private func configureViews() {
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendAction))
+        let sendButton = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendAction))
+        sendButton.accessibilityIdentifier = "SendButton"
+        self.navigationItem.rightBarButtonItem = sendButton
         self.initalizeData()
         self.setupTableView()
         self.setupCollectionView()

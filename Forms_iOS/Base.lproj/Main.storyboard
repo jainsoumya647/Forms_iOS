@@ -38,6 +38,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addFormButton" destination="Ncq-6n-0Zs" id="gqf-BG-fcD"/>
                         <outlet property="formsListTable" destination="it5-Z0-OZN" id="8fA-8N-9RB"/>
                     </connections>
                 </viewController>

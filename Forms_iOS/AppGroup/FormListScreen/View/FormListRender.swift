@@ -31,7 +31,6 @@ extension FormListRender: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = FormsListCell.getDequeuedCell(for: tableView, indexPath: indexPath) as? FormsListCell else {
             return UITableViewCell()
         }
@@ -41,5 +40,4 @@ extension FormListRender: UITableViewDataSource {
         }
         return cell
     }
-    
 }

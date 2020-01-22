@@ -11,7 +11,8 @@ import UIKit
 class FormListViewController: UIViewController {
 
     @IBOutlet weak var formsListTable: UITableView!
-    
+    @IBOutlet weak var addFormButton: UIBarButtonItem!
+
     var render: FormListRender!
     var viewModel: FormsListViewModel!
     
@@ -23,6 +24,7 @@ class FormListViewController: UIViewController {
     private func configureViews() {
         self.initalizeData()
         self.configureTableView()
+        self.addAccessibilityIdentifiers()
     }
     
     private func initalizeData() {
@@ -45,14 +47,18 @@ class FormListViewController: UIViewController {
         self.formsListTable.dataSource = self.render
         self.formsListTable.backgroundColor = .tableBackgroundColor
     }
-    
+
+    private func addAccessibilityIdentifiers() {
+        self.addFormButton.accessibilityIdentifier = "Add"
+        self.formsListTable.accessibilityIdentifier = "FormsList"
+    }
+
     @IBAction func addFormAction(_ sender: Any) {
         if let vc = FormDetailsViewController.getController() {
             vc.delegate = self
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
 }
 
 extension FormListViewController: FormListRenderDelegate {

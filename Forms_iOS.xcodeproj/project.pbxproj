@@ -44,6 +44,7 @@
 		EF9203EB23D79BB8008C8FA8 /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9203E923D79BB8008C8FA8 /* ImageCollectionCell.swift */; };
 		EF9203EC23D79BB8008C8FA8 /* ImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF9203EA23D79BB8008C8FA8 /* ImageCollectionCell.xib */; };
 		EF9203EE23D79BE7008C8FA8 /* ReusableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9203ED23D79BE7008C8FA8 /* ReusableCollectionViewCell.swift */; };
+		EF9203F323D9FDF0008C8FA8 /* FormListUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9203F223D9FDF0008C8FA8 /* FormListUnitTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		EF9203E923D79BB8008C8FA8 /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
 		EF9203EA23D79BB8008C8FA8 /* ImageCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionCell.xib; sourceTree = "<group>"; };
 		EF9203ED23D79BE7008C8FA8 /* ReusableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCollectionViewCell.swift; sourceTree = "<group>"; };
+		EF9203F223D9FDF0008C8FA8 /* FormListUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormListUnitTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 		926590FB23D5AFA0009A8C6F /* Forms_iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				EF9203EF23D9FA6A008C8FA8 /* FormsListTest */,
 				9298031123D8422D00417ADD /* FormDetailsTest */,
 				926590FE23D5AFA0009A8C6F /* Info.plist */,
 			);
@@ -380,6 +383,14 @@
 				EF9203EA23D79BB8008C8FA8 /* ImageCollectionCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		EF9203EF23D9FA6A008C8FA8 /* FormsListTest */ = {
+			isa = PBXGroup;
+			children = (
+				EF9203F223D9FDF0008C8FA8 /* FormListUnitTest.swift */,
+			);
+			path = FormsListTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -658,6 +669,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9298031323D8425300417ADD /* FormDetailsTest.swift in Sources */,
+				EF9203F323D9FDF0008C8FA8 /* FormListUnitTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

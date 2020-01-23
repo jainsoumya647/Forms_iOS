@@ -1,0 +1,6 @@
+framework module Pods_Forms_iOSTests {
+  umbrella header "Pods-Forms_iOSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,26 +7,43 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FormsListViewModel {
-    private var forms = [FormModel]()
-    var reloadTable: ((_ forms: [FormModel]) -> Void)?
-    
+    private var forms: Results<FormModel>?
+    var reloadTable: ((_ forms: Results<FormModel>) -> Void)?
+
+    init() {
+        DataStore.shared.retriveDataFromStore { (forms) in
+            self.forms = forms
+        }
+    }
+
     func removeModel(on index: Int) {
-        guard self.forms.count > index else {
+        guard let forms = self.forms, forms.count > index else {
             return
         }
-        self.forms.remove(at: index)
-        self.reloadTable?(self.forms)
+        DataStore.shared.deleteDataFromStore(model: forms[index]) {
+            DataStore.shared.retriveDataFromStore { (forms) in
+                self.forms = forms
+                self.reloadTable?(forms)
+            }
+        }
     }
     
     func appendForms(_ form: FormModel) {
-        self.forms.append(form)
-        self.reloadTable?(self.forms)
+        DataStore.shared.retriveDataFromStore { (forms) in
+            self.forms = forms
+            self.reloadTable?(forms)
+        }
+    }
+
+    func getForms() -> Results<FormModel>? {
+        return self.forms
     }
 
     ///Only for unit tests
     func formsCountEqualsTo(_ count: Int) -> Bool {
-        return self.forms.count == count
+        return (self.forms?.count ?? 0) == count
     }
 }

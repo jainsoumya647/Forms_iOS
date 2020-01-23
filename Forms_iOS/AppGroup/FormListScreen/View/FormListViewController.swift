@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FormListViewController: UIViewController {
 
@@ -29,13 +30,16 @@ class FormListViewController: UIViewController {
     
     private func initalizeData() {
         self.viewModel = FormsListViewModel()
-        self.render = FormListRender(forms: [FormModel]())
+        self.render = FormListRender()
+        if let forms = self.viewModel.getForms() {
+            self.render.updateForms(forms: forms)
+        }
         self.render.delegate = self
         self.observeEvents()
     }
     
     private func observeEvents() {
-        self.viewModel.reloadTable = { [weak self] (forms: [FormModel]) in
+        self.viewModel.reloadTable = { [weak self] (forms: Results<FormModel>) in
             self?.render.updateForms(forms: forms)
             self?.formsListTable.reloadData()
         }
@@ -72,6 +76,8 @@ extension FormListViewController: FormListRenderDelegate {
 extension FormListViewController: FormDetailsDelegate {
     func formSaved(form: FormModel) {
         print(form)
-        self.viewModel.appendForms(form)
+        DataStore.shared.saveDataToStore(model: form) {
+            self.viewModel.appendForms(form)
+        }
     }
 }

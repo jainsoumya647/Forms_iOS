@@ -23,6 +23,7 @@
 		9298030D23D8354100417ADD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298030C23D8354100417ADD /* UIView+Extension.swift */; };
 		9298031023D836F500417ADD /* FormListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298030F23D836F500417ADD /* FormListTest.swift */; };
 		9298031323D8425300417ADD /* FormDetailsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298031223D8425300417ADD /* FormDetailsTest.swift */; };
+		9298031F23D9786800417ADD /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298031E23D9786800417ADD /* DataStore.swift */; };
 		96F4224DC3AE063D94CF8266 /* Pods_Forms_iOS_Forms_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393EFF26FD3095557A699FDB /* Pods_Forms_iOS_Forms_iOSUITests.framework */; };
 		EF28C1DF23D610B20097D275 /* FormListRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1DE23D610B20097D275 /* FormListRender.swift */; };
 		EF28C1E223D611040097D275 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28C1E123D611040097D275 /* FormModel.swift */; };
@@ -89,6 +90,7 @@
 		9298030C23D8354100417ADD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9298030F23D836F500417ADD /* FormListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormListTest.swift; sourceTree = "<group>"; };
 		9298031223D8425300417ADD /* FormDetailsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDetailsTest.swift; sourceTree = "<group>"; };
+		9298031E23D9786800417ADD /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		B0D1A56475FDD90EA703B7D6 /* Pods-Forms_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forms_iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Forms_iOSTests/Pods-Forms_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B776FD4846FD6EEA0E1131D1 /* Pods_Forms_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forms_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76A8B20451E55EFE95E2A55 /* Pods-Forms_iOS-Forms_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forms_iOS-Forms_iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Forms_iOS-Forms_iOSUITests/Pods-Forms_iOS-Forms_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		926590E423D5AF9E009A8C6F /* Forms_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				9298031D23D9782100417ADD /* Storage */,
 				9265911823D5B0DA009A8C6F /* AppGroup */,
 				9265911523D5AFBE009A8C6F /* Helper */,
 				926590EB23D5AF9E009A8C6F /* Main.storyboard */,
@@ -306,6 +309,14 @@
 				9298031223D8425300417ADD /* FormDetailsTest.swift */,
 			);
 			path = FormDetailsTest;
+			sourceTree = "<group>";
+		};
+		9298031D23D9782100417ADD /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				9298031E23D9786800417ADD /* DataStore.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		EF28C1E023D610F50097D275 /* Model */ = {
@@ -637,6 +648,7 @@
 				9265912223D5C9AA009A8C6F /* Constants.swift in Sources */,
 				EF28C1FA23D651A10097D275 /* FormDetailsViewController.swift in Sources */,
 				EF28C1E523D613340097D275 /* FormsListViewModel.swift in Sources */,
+				9298031F23D9786800417ADD /* DataStore.swift in Sources */,
 				EF9203E823D79B70008C8FA8 /* ImageCollectionViewRender.swift in Sources */,
 				9265911F23D5C95A009A8C6F /* UIViewController+Extension.swift in Sources */,
 				926590E623D5AF9E009A8C6F /* AppDelegate.swift in Sources */,

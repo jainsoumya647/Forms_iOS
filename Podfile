@@ -8,6 +8,7 @@ target 'Forms_iOS' do
   # Pods for Forms_iOS
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'IQKeyboardManagerSwift'
+  pod 'RealmSwift'
   target 'Forms_iOSTests' do
     inherit! :search_paths
     # Pods for testing

@@ -1,20 +1,30 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.4)
+  - Realm (4.3.1):
+    - Realm/Headers (= 4.3.1)
+  - Realm/Headers (4.3.1)
+  - RealmSwift (4.3.1):
+    - Realm (= 4.3.1)
   - SkyFloatingLabelTextField (3.8.0)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
+  - RealmSwift
   - SkyFloatingLabelTextField (~> 3.0)
 
 SPEC REPOS:
   trunk:
     - IQKeyboardManagerSwift
+    - Realm
+    - RealmSwift
     - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+  Realm: 31dc40934081ef740f60feedc46d88473cbfeb40
+  RealmSwift: b5199e9a41f67b99f51acf6874a6166f5fbe93d1
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
 
-PODFILE CHECKSUM: 8b95c0eda970598ea901f60c7646f08c542c99f0
+PODFILE CHECKSUM: 6619b270e11fea4a98bd9ac509910e37303ed19d
 
 COCOAPODS: 1.8.4

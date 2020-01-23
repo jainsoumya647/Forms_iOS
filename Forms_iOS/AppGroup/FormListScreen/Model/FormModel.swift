@@ -7,20 +7,20 @@
 //
 
 import Foundation
+import RealmSwift
 
-
-struct FormModel {
-    var formTitle: String?
-    var formDescription: String?
-    var budget: String?
-    let currency = "US"
-    var rate: String?
-    var paymentMethod: String?
-    var startDate: Date?
-    var jobTerm: String?
-    var numberOfViews:Int
+class FormModel: Object {
+    @objc dynamic var formTitle: String?
+    @objc dynamic var formDescription: String?
+    @objc dynamic var budget: String?
+    @objc dynamic let currency = "US"
+    @objc dynamic var rate: String?
+    @objc dynamic var paymentMethod: String?
+    @objc dynamic var startDate: Date?
+    @objc dynamic var jobTerm: String?
+    @objc dynamic var numberOfViews:Int
     
-    init() {
+    required init() {
         self.numberOfViews = Int.random(in: 0...999)
     }
     

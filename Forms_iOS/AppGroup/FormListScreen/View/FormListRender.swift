@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol FormListRenderDelegate: class {
     func moreOptionsClicked(index: Int)
@@ -14,27 +15,28 @@ protocol FormListRenderDelegate: class {
 
 class FormListRender: NSObject {
     
-    var forms: [FormModel]
+    var forms: Results<FormModel>?
     weak var delegate: FormListRenderDelegate?
-    init(forms: [FormModel]) {
-        self.forms = forms
-    }
+//    init(forms: Results<FormModel>) {
+//        self.forms = forms
+//    }
     
-    func updateForms(forms: [FormModel]) {
+    func updateForms(forms: Results<FormModel>) {
         self.forms = forms
     }
 }
 
 extension FormListRender: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.forms.count
+        return self.forms?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = FormsListCell.getDequeuedCell(for: tableView, indexPath: indexPath) as? FormsListCell else {
+        guard let cell = FormsListCell.getDequeuedCell(for: tableView, indexPath: indexPath) as? FormsListCell,
+            let form = self.forms?[indexPath.row] else {
             return UITableViewCell()
         }
-        cell.configureCell(formModel: self.forms[indexPath.row])
+        cell.configureCell(formModel: form)
         cell.moreOptionAction = { [weak self] in
             self?.delegate?.moreOptionsClicked(index: indexPath.row)
         }

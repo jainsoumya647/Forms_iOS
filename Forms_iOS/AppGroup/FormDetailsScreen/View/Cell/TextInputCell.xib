@@ -28,7 +28,6 @@
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Form Title"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Form Title"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="iconMarginLeft">
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>

@@ -76,8 +76,6 @@ extension FormListViewController: FormListRenderDelegate {
 extension FormListViewController: FormDetailsDelegate {
     func formSaved(form: FormModel) {
         print(form)
-        DataStore.shared.saveDataToStore(model: form) {
-            self.viewModel.appendForms(form)
-        }
+        self.viewModel.appendForms(form)
     }
 }

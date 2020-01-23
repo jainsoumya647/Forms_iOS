@@ -17,9 +17,6 @@ class FormListRender: NSObject {
     
     var forms: Results<FormModel>?
     weak var delegate: FormListRenderDelegate?
-//    init(forms: Results<FormModel>) {
-//        self.forms = forms
-//    }
     
     func updateForms(forms: Results<FormModel>) {
         self.forms = forms

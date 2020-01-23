@@ -10,36 +10,36 @@ import RealmSwift
 
 class DataStore {
 
-    static let shared = DataStore()
+    var updateUI: ((Results<FormModel>)-> Void)?
 
-    func saveDataToStore(model: FormModel, completion: @escaping () -> Void) {
+    func saveDataToStore(model: FormModel) {
         do {
             let realm = try Realm()
             try? realm.write {
                 realm.add(model)
-                completion()
+                self.retriveDataFromStore()
             }
         } catch {
             print("Error in Saving \(error.localizedDescription)")
         }
     }
 
-    func retriveDataFromStore(completion: @escaping (_ model: Results<FormModel>) -> Void) {
+    func retriveDataFromStore() {
         do {
             let realm = try Realm()
             let formsArray = realm.objects(FormModel.self)
-            completion(formsArray)
+            self.updateUI?(formsArray)
         } catch {
             print("Error in Saving \(error.localizedDescription)")
         }
     }
 
-    func deleteDataFromStore(model: FormModel,completion: @escaping () -> Void) {
+    func deleteDataFromStore(model: FormModel) {
         do {
             let realm = try Realm()
             try? realm.write {
                 realm.delete(model)
-                completion()
+                return self.retriveDataFromStore()
             }
         } catch {
             print("Error in Saving \(error.localizedDescription)")
